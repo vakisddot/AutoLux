@@ -1,0 +1,73 @@
+---
+const { page } = Astro.props;
+
+const { currentPage, lastPage, url } = page;
+
+// Helper: Calculate the base URL for numbered links
+// This removes the page number from the end (e.g., "/collection/2" -> "/collection")
+// to allow us to rebuild links like "/collection/3"
+const cleanPath = url.current.replace(/\/\d+$/, "");
+
+const pageNumbers = Array.from({ length: lastPage }, (_, i) => i + 1);
+---
+
+<nav class="flex justify-center my-12">
+  <ul class="grid grid-cols-6 md:flex">
+    <li>
+      {url.prev ? (
+        <a
+          href={url.prev}
+          class="flex items-center justify-center px-4 h-10 text-gray-300 bg-transparent border border-white/20 rounded-s-lg hover:bg-white/10 hover:text-white transition-colors duration-200"
+        >
+          <i class="ph ph-arrow-left mr-2"></i>
+          <span class="hidden sm:inline">Предишна</span>
+        </a>
+      ) : (
+        <span class="flex items-center justify-center px-4 h-10 text-gray-600 bg-transparent border border-white/10 rounded-s-lg cursor-not-allowed">
+          <i class="ph ph-arrow-left mr-2"></i>
+          <span class="hidden sm:inline">Предишна</span>
+        </span>
+      )}
+    </li>
+
+    {pageNumbers.map((num) => {
+      const href = `${cleanPath}/${num}`;
+      const isActive = num === currentPage;
+
+      return (
+        <li>
+          <a
+            href={href}
+            aria-current={isActive ? "page" : undefined}
+            class:list={[
+              "flex items-center justify-center px-4 h-10 border transition-colors duration-200",
+              isActive 
+                ? "text-black bg-white border-white font-bold" 
+                : "text-gray-300 bg-transparent border-white/20 hover:bg-white/10 hover:text-white"
+            ]}
+          >
+            {num}
+          </a>
+        </li>
+      );
+    })}
+
+    <li>
+      {url.next ? (
+        <a
+          href={url.next}
+          class="flex items-center justify-center px-4 h-10 text-gray-300 bg-transparent border border-white/20 rounded-e-lg hover:bg-white/10 hover:text-white transition-colors duration-200"
+        >
+          <span class="hidden sm:inline">Следваща</span>
+          <i class="ph ph-arrow-right ml-2"></i>
+        </a>
+      ) : (
+        <span class="flex items-center justify-center px-4 h-10 text-gray-600 bg-transparent border border-white/10 rounded-e-lg cursor-not-allowed">
+          <span class="hidden sm:inline">Следваща</span>
+          <i class="ph ph-arrow-right ml-2"></i>
+        </span>
+      )}
+    </li>
+
+  </ul>
+</nav>
