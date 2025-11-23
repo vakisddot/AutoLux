@@ -1,0 +1,25 @@
+---
+import urls from "../content/urls.json";
+
+const currYear = new Date().getFullYear();
+const emailFull = "mailto:" + urls.email;
+---
+<footer class="bg-bg-secondary flex flex-col items-center py-4 mt-auto">
+    <section class="flex flex-col items-center">
+        <ul id="socials" class="flex gap-4">
+            <li class="highlight"><a href={emailFull}><i class="ph ph-envelope"></i></a></li>
+            <li class="highlight"><a href={urls.github}><i class="ph ph-github-logo"></i></a></li>
+            <li class="highlight"><a href={urls.instagram}><i class="ph ph-instagram-logo"></i></a></li>
+            <li class="highlight"><a href={urls.youtube}><i class="ph ph-youtube-logo"></i></a></li>
+            <li class="highlight"><a href={urls.tiktok}><i class="ph ph-tiktok-logo"></i></a></li>
+        </ul>
+
+        <p class="text-center py-2">
+            &copy; {currYear} <a href={urls.web} class="font-bold">AutoLux.bg</a>. All rights reserved.
+        </p>
+    </section>
+
+    <p class="text-text-secondary w-full text-center pt-2">
+        Made by <a href={urls.web} class="font-bold">Vakïs Interactive</a>
+    </p>
+</footer>

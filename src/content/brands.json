@@ -1,0 +1,57 @@
+[
+    {
+        "name": "Mercedes-Benz",
+        "logo": "/brands/mercedesbenz.svg",
+        "url": "https://www.mercedes-benz.com"
+    },
+    {
+        "name": "Porsche",
+        "logo": "/brands/porsche.svg",
+        "url": "https://www.porsche.com"
+    },
+    {
+        "name": "Audi",
+        "logo": "/brands/audi.svg",
+        "url": "https://www.audi.com"
+    },
+    {
+        "name": "Bentley",
+        "logo": "/brands/bentley.svg",
+        "url": "https://www.bentleymotors.com"
+    },
+    {
+        "name": "Rolls-Royce",
+        "logo": "/brands/rollsroyce.svg",
+        "url": "https://www.rolls-roycemotorcars.com"
+    },
+    {
+        "name": "Lamborghini",
+        "logo": "/brands/lamborghini.svg",
+        "url": "https://www.lamborghini.com"
+    },
+    {
+        "name": "Ferrari",
+        "logo": "/brands/mclaren.svg",
+        "url": "https://cars.mclaren.com"
+    },
+    {
+        "name": "Aston Martin",
+        "logo": "/brands/astonmartin.svg",
+        "url": "https://www.astonmartin.com"
+    },
+    {
+        "name": "Bugatti",
+        "logo": "/brands/bugatti.svg",
+        "url": "https://www.bugatti.com"
+    },
+    {
+        "name": "Tesla",
+        "logo": "/brands/tesla.svg",
+        "url": "https://www.tesla.com"
+    },
+    {
+        "name": "Cadillac",
+        "logo": "/brands/cadillac.svg",
+        "url": "https://www.cadillac.com"
+    }
+]

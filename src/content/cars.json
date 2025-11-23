@@ -1,0 +1,1002 @@
+[
+    {
+        "make": "Porsche",
+        "model": "911",
+        "year": 2022,
+        "engine_size": "3",
+        "horsepower": 379,
+        "torque_lb_ft": 331,
+        "0_60_mph": 4.0,
+        "price": 101200
+    },
+    {
+        "make": "Lamborghini",
+        "model": "Huracan",
+        "year": 2021,
+        "engine_size": "5.2",
+        "horsepower": 630,
+        "torque_lb_ft": 443,
+        "0_60_mph": 2.8,
+        "price": 274390
+    },
+    {
+        "make": "Ferrari",
+        "model": "488 GTB",
+        "year": 2022,
+        "engine_size": "3.9",
+        "horsepower": 661,
+        "torque_lb_ft": 561,
+        "0_60_mph": 3.0,
+        "price": 333750
+    },
+    {
+        "make": "Audi",
+        "model": "R8",
+        "year": 2022,
+        "engine_size": "5.2",
+        "horsepower": 562,
+        "torque_lb_ft": 406,
+        "0_60_mph": 3.2,
+        "price": 142700
+    },
+    {
+        "make": "McLaren",
+        "model": "720S",
+        "year": 2021,
+        "engine_size": "4",
+        "horsepower": 710,
+        "torque_lb_ft": 568,
+        "0_60_mph": 2.7,
+        "price": 298000
+    },
+    {
+        "make": "BMW",
+        "model": "M8",
+        "year": 2022,
+        "engine_size": "4.4",
+        "horsepower": 617,
+        "torque_lb_ft": 553,
+        "0_60_mph": 3.1,
+        "price": 130000
+    },
+    {
+        "make": "Mercedes-Benz",
+        "model": "AMG GT",
+        "year": 2021,
+        "engine_size": "4",
+        "horsepower": 523,
+        "torque_lb_ft": 494,
+        "0_60_mph": 3.8,
+        "price": 118500
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Corvette",
+        "year": 2021,
+        "engine_size": "6.2",
+        "horsepower": 490,
+        "torque_lb_ft": 465,
+        "0_60_mph": 2.8,
+        "price": 59900
+    },
+    {
+        "make": "Ford",
+        "model": "Mustang Shelby GT500",
+        "year": 2022,
+        "engine_size": "5.2",
+        "horsepower": 760,
+        "torque_lb_ft": 625,
+        "0_60_mph": 3.5,
+        "price": 81000
+    },
+    {
+        "make": "Nissan",
+        "model": "GT-R Nismo",
+        "year": 2021,
+        "engine_size": "3.8",
+        "horsepower": 600,
+        "torque_lb_ft": 481,
+        "0_60_mph": 2.5,
+        "price": 212000
+    },
+    {
+        "make": "Aston Martin",
+        "model": "DB11",
+        "year": 2021,
+        "engine_size": "5.2",
+        "horsepower": 630,
+        "torque_lb_ft": 516,
+        "0_60_mph": 3.5,
+        "price": 201495
+    },
+    {
+        "make": "Bugatti",
+        "model": "Chiron",
+        "year": 2021,
+        "engine_size": "8",
+        "horsepower": 1500,
+        "torque_lb_ft": 1180,
+        "0_60_mph": 2.4,
+        "price": 3000000
+    },
+    {
+        "make": "Dodge",
+        "model": "Challenger SRT Hellcat",
+        "year": 2022,
+        "engine_size": "6.2",
+        "horsepower": 717,
+        "torque_lb_ft": 656,
+        "0_60_mph": 3.5,
+        "price": 61000
+    },
+    {
+        "make": "Jaguar",
+        "model": "F-Type",
+        "year": 2022,
+        "engine_size": "3",
+        "horsepower": 296,
+        "torque_lb_ft": 295,
+        "0_60_mph": 5.4,
+        "price": 70100
+    },
+    {
+        "make": "Koenigsegg",
+        "model": "Jesko",
+        "year": 2021,
+        "engine_size": "5",
+        "horsepower": 1280,
+        "torque_lb_ft": 1015,
+        "0_60_mph": 2.5,
+        "price": 2800000
+    },
+    {
+        "make": "Lexus",
+        "model": "LC 500",
+        "year": 2021,
+        "engine_size": "5",
+        "horsepower": 471,
+        "torque_lb_ft": 398,
+        "0_60_mph": 4.4,
+        "price": 92950
+    },
+    {
+        "make": "Lotus",
+        "model": "Evora GT",
+        "year": 2021,
+        "engine_size": "3.5",
+        "horsepower": 416,
+        "torque_lb_ft": 317,
+        "0_60_mph": 3.8,
+        "price": 104450
+    },
+    {
+        "make": "Maserati",
+        "model": "GranTurismo",
+        "year": 2021,
+        "engine_size": "4.7",
+        "horsepower": 454,
+        "torque_lb_ft": 384,
+        "0_60_mph": 4.8,
+        "price": 150000
+    },
+    {
+        "make": "Porsche",
+        "model": "Boxster",
+        "year": 2021,
+        "engine_size": "2",
+        "horsepower": 300,
+        "torque_lb_ft": 280,
+        "0_60_mph": 4.7,
+        "price": 62000
+    },
+    {
+        "make": "Alfa Romeo",
+        "model": "Giulia Quadrifoglio",
+        "year": 2022,
+        "engine_size": "2.9",
+        "horsepower": 505,
+        "torque_lb_ft": 443,
+        "0_60_mph": 3.8,
+        "price": 78000
+    },
+    {
+        "make": "Ariel",
+        "model": "Atom",
+        "year": 2021,
+        "engine_size": "2",
+        "horsepower": 320,
+        "torque_lb_ft": 243,
+        "0_60_mph": 2.8,
+        "price": 75000
+    },
+    {
+        "make": "Bentley",
+        "model": "Continental GT",
+        "year": 2021,
+        "engine_size": "6",
+        "horsepower": 626,
+        "torque_lb_ft": 664,
+        "0_60_mph": 3.6,
+        "price": 225000
+    },
+    {
+        "make": "McLaren",
+        "model": "Artura",
+        "year": 2022,
+        "engine_size": "3",
+        "horsepower": 671,
+        "torque_lb_ft": 531,
+        "0_60_mph": 3.0,
+        "price": 225000
+    },
+    {
+        "make": "Mercedes-AMG",
+        "model": "SLS AMG",
+        "year": 2021,
+        "engine_size": "6.2",
+        "horsepower": 622,
+        "torque_lb_ft": 468,
+        "0_60_mph": 3.5,
+        "price": 248000
+    },
+    {
+        "make": "Pagani",
+        "model": "Huayra",
+        "year": 2021,
+        "engine_size": "6",
+        "horsepower": 720,
+        "torque_lb_ft": 737,
+        "0_60_mph": 2.8,
+        "price": 2800000
+    },
+    {
+        "make": "Polestar",
+        "model": "1",
+        "year": 2021,
+        "engine_size": "2",
+        "horsepower": 600,
+        "torque_lb_ft": 738,
+        "0_60_mph": 4.1,
+        "price": 155000
+    },
+    {
+        "make": "Rimac",
+        "model": "Nevera",
+        "year": 2022,
+        "engine_size": "Electric",
+        "horsepower": 1914,
+        "torque_lb_ft": 1696,
+        "0_60_mph": 1.85,
+        "price": 2400000
+    },
+    {
+        "make": "Porsche",
+        "model": "Cayman GT4",
+        "year": 2022,
+        "engine_size": "4",
+        "horsepower": 414,
+        "torque_lb_ft": 309,
+        "0_60_mph": 3.8,
+        "price": 100200
+    },
+    {
+        "make": "Lamborghini",
+        "model": "Aventador SVJ",
+        "year": 2021,
+        "engine_size": "6.5",
+        "horsepower": 759,
+        "torque_lb_ft": 531,
+        "0_60_mph": 2.8,
+        "price": 517770
+    },
+    {
+        "make": "Ferrari",
+        "model": "SF90 Stradale",
+        "year": 2021,
+        "engine_size": "4",
+        "horsepower": 986,
+        "torque_lb_ft": 590,
+        "0_60_mph": 2.5,
+        "price": 625000
+    },
+    {
+        "make": "Audi",
+        "model": "RS7",
+        "year": 2022,
+        "engine_size": "4",
+        "horsepower": 591,
+        "torque_lb_ft": 590,
+        "0_60_mph": 3.5,
+        "price": 117000
+    },
+    {
+        "make": "McLaren",
+        "model": "Artura",
+        "year": 2021,
+        "engine_size": "3",
+        "horsepower": 671,
+        "torque_lb_ft": 531,
+        "0_60_mph": 3.0,
+        "price": 225000
+    },
+    {
+        "make": "BMW",
+        "model": "M4",
+        "year": 2022,
+        "engine_size": "3",
+        "horsepower": 503,
+        "torque_lb_ft": 479,
+        "0_60_mph": 3.8,
+        "price": 72800
+    },
+    {
+        "make": "Mercedes-Benz",
+        "model": "SLS AMG",
+        "year": 2015,
+        "engine_size": "6.2",
+        "horsepower": 622,
+        "torque_lb_ft": 468,
+        "0_60_mph": 3.2,
+        "price": 222000
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Camaro ZL1",
+        "year": 2021,
+        "engine_size": "6.2",
+        "horsepower": 650,
+        "torque_lb_ft": 650,
+        "0_60_mph": 3.5,
+        "price": 64695
+    },
+    {
+        "make": "Ford",
+        "model": "GT",
+        "year": 2022,
+        "engine_size": "3.5",
+        "horsepower": 660,
+        "torque_lb_ft": 550,
+        "0_60_mph": 3.0,
+        "price": 500000
+    },
+    {
+        "make": "Nissan",
+        "model": "370Z Nismo",
+        "year": 2021,
+        "engine_size": "3.7",
+        "horsepower": 350,
+        "torque_lb_ft": 276,
+        "0_60_mph": 4.5,
+        "price": 45690
+    },
+    {
+        "make": "Porsche",
+        "model": "Taycan 4S",
+        "year": 2022,
+        "engine_size": "Electric Motor",
+        "horsepower": 562,
+        "torque_lb_ft": 479,
+        "0_60_mph": 3.8,
+        "price": 104000
+    },
+    {
+        "make": "Lamborghini",
+        "model": "Urus",
+        "year": 2021,
+        "engine_size": "4",
+        "horsepower": 641,
+        "torque_lb_ft": 626,
+        "0_60_mph": 3.5,
+        "price": 218000
+    },
+    {
+        "make": "Ferrari",
+        "model": "Roma",
+        "year": 2021,
+        "engine_size": "3.9",
+        "horsepower": 611,
+        "torque_lb_ft": 561,
+        "0_60_mph": 3.3,
+        "price": 222000
+    },
+    {
+        "make": "Audi",
+        "model": "RS3",
+        "year": 2022,
+        "engine_size": "2.5",
+        "horsepower": 394,
+        "torque_lb_ft": 369,
+        "0_60_mph": 3.9,
+        "price": 57000
+    },
+    {
+        "make": "McLaren",
+        "model": "GT",
+        "year": 2021,
+        "engine_size": "4",
+        "horsepower": 612,
+        "torque_lb_ft": 465,
+        "0_60_mph": 3.1,
+        "price": 210000
+    },
+    {
+        "make": "BMW",
+        "model": "i8",
+        "year": 2020,
+        "engine_size": "1.5 + Electric",
+        "horsepower": 369,
+        "torque_lb_ft": 420,
+        "0_60_mph": 4.2,
+        "price": 148500
+    },
+    {
+        "make": "Mercedes-Benz",
+        "model": "CLS63 AMG",
+        "year": 2019,
+        "engine_size": "4",
+        "horsepower": 603,
+        "torque_lb_ft": 627,
+        "0_60_mph": 3.4,
+        "price": 132000
+    },
+    {
+        "make": "Porsche",
+        "model": "Cayman",
+        "year": 2021,
+        "engine_size": "2",
+        "horsepower": 300,
+        "torque_lb_ft": 280,
+        "0_60_mph": 5.1,
+        "price": 58900
+    },
+    {
+        "make": "Lamborghini",
+        "model": "Aventador SVJ",
+        "year": 2021,
+        "engine_size": "6.5",
+        "horsepower": 759,
+        "torque_lb_ft": 531,
+        "0_60_mph": 2.8,
+        "price": 518000
+    },
+    {
+        "make": "Ferrari",
+        "model": "SF90 Stradale",
+        "year": 2021,
+        "engine_size": "4",
+        "horsepower": 986,
+        "torque_lb_ft": 590,
+        "0_60_mph": 2.5,
+        "price": 625000
+    },
+    {
+        "make": "Audi",
+        "model": "RS3",
+        "year": 2022,
+        "engine_size": "2.5",
+        "horsepower": 394,
+        "torque_lb_ft": 369,
+        "0_60_mph": 3.9,
+        "price": 56200
+    },
+    {
+        "make": "McLaren",
+        "model": "570S",
+        "year": 2021,
+        "engine_size": "3.8",
+        "horsepower": 562,
+        "torque_lb_ft": 443,
+        "0_60_mph": 2.8,
+        "price": 192500
+    },
+    {
+        "make": "BMW",
+        "model": "M4",
+        "year": 2022,
+        "engine_size": "3",
+        "horsepower": 503,
+        "torque_lb_ft": 479,
+        "0_60_mph": 3.8,
+        "price": 71800
+    },
+    {
+        "make": "Mercedes-Benz",
+        "model": "AMG C63",
+        "year": 2021,
+        "engine_size": "4",
+        "horsepower": 503,
+        "torque_lb_ft": 516,
+        "0_60_mph": 3.8,
+        "price": 68000
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Camaro SS",
+        "year": 2021,
+        "engine_size": "6.2",
+        "horsepower": 455,
+        "torque_lb_ft": 455,
+        "0_60_mph": 4.1,
+        "price": 42500
+    },
+    {
+        "make": "Ford",
+        "model": "Mustang GT",
+        "year": 2022,
+        "engine_size": "5",
+        "horsepower": 460,
+        "torque_lb_ft": 420,
+        "0_60_mph": 4.3,
+        "price": 39000
+    },
+    {
+        "make": "Nissan",
+        "model": "370Z Nismo",
+        "year": 2021,
+        "engine_size": "3.7",
+        "horsepower": 350,
+        "torque_lb_ft": 276,
+        "0_60_mph": 4.8,
+        "price": 46100
+    },
+    {
+        "make": "Aston Martin",
+        "model": "Vantage",
+        "year": 2021,
+        "engine_size": "4",
+        "horsepower": 503,
+        "torque_lb_ft": 505,
+        "0_60_mph": 3.5,
+        "price": 142100
+    },
+    {
+        "make": "Lotus",
+        "model": "Evora GT",
+        "year": 2021,
+        "engine_size": "3.5",
+        "horsepower": 416,
+        "torque_lb_ft": 317,
+        "0_60_mph": 3.8,
+        "price": 105000
+    },
+    {
+        "make": "Porsche",
+        "model": "Panamera",
+        "year": 2021,
+        "engine_size": "2.9",
+        "horsepower": 325,
+        "torque_lb_ft": 331,
+        "0_60_mph": 5.1,
+        "price": 87200
+    },
+    {
+        "make": "Lamborghini",
+        "model": "Urus",
+        "year": 2021,
+        "engine_size": "4",
+        "horsepower": 641,
+        "torque_lb_ft": 627,
+        "0_60_mph": 3.2,
+        "price": 218000
+    },
+    {
+        "make": "Ferrari",
+        "model": "Roma",
+        "year": 2021,
+        "engine_size": "3.9",
+        "horsepower": 612,
+        "torque_lb_ft": 560,
+        "0_60_mph": 3.4,
+        "price": 222000
+    },
+    {
+        "make": "Audi",
+        "model": "S5",
+        "year": 2022,
+        "engine_size": "3",
+        "horsepower": 349,
+        "torque_lb_ft": 369,
+        "0_60_mph": 4.4,
+        "price": 52500
+    },
+    {
+        "make": "McLaren",
+        "model": "600LT",
+        "year": 2021,
+        "engine_size": "3.8",
+        "horsepower": 592,
+        "torque_lb_ft": 457,
+        "0_60_mph": 2.8,
+        "price": 241000
+    },
+    {
+        "make": "BMW",
+        "model": "M5",
+        "year": 2022,
+        "engine_size": "4.4",
+        "horsepower": 600,
+        "torque_lb_ft": 553,
+        "0_60_mph": 3.2,
+        "price": 103500
+    },
+    {
+        "make": "Aston Martin",
+        "model": "Vantage",
+        "year": 2022,
+        "engine_size": "4",
+        "horsepower": 503,
+        "torque_lb_ft": 505,
+        "0_60_mph": 3.5,
+        "price": 146000
+    },
+    {
+        "make": "Audi",
+        "model": "RS5",
+        "year": 2021,
+        "engine_size": "2.9",
+        "horsepower": 444,
+        "torque_lb_ft": 443,
+        "0_60_mph": 3.6,
+        "price": 75400
+    },
+    {
+        "make": "BMW",
+        "model": "M2",
+        "year": 2022,
+        "engine_size": "3",
+        "horsepower": 405,
+        "torque_lb_ft": 406,
+        "0_60_mph": 4.0,
+        "price": 58900
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Camaro SS",
+        "year": 2021,
+        "engine_size": "6.2",
+        "horsepower": 455,
+        "torque_lb_ft": 455,
+        "0_60_mph": 4.0,
+        "price": 42900
+    },
+    {
+        "make": "Dodge",
+        "model": "Challenger SRT Hellcat Redeye",
+        "year": 2022,
+        "engine_size": "6.2",
+        "horsepower": 797,
+        "torque_lb_ft": 707,
+        "0_60_mph": 3.4,
+        "price": 78595
+    },
+    {
+        "make": "Ford",
+        "model": "GT",
+        "year": 2021,
+        "engine_size": "3.5",
+        "horsepower": 660,
+        "torque_lb_ft": 550,
+        "0_60_mph": 3.0,
+        "price": 500000
+    },
+    {
+        "make": "Jaguar",
+        "model": "F-Type",
+        "year": 2022,
+        "engine_size": "2",
+        "horsepower": 296,
+        "torque_lb_ft": 295,
+        "0_60_mph": 5.4,
+        "price": 62750
+    },
+    {
+        "make": "Lamborghini",
+        "model": "Aventador",
+        "year": 2021,
+        "engine_size": "6.5",
+        "horsepower": 770,
+        "torque_lb_ft": 531,
+        "0_60_mph": 2.9,
+        "price": 417826
+    },
+    {
+        "make": "Maserati",
+        "model": "GranTurismo",
+        "year": 2021,
+        "engine_size": "4.7",
+        "horsepower": 454,
+        "torque_lb_ft": 384,
+        "0_60_mph": 4.7,
+        "price": 150980
+    },
+    {
+        "make": "McLaren",
+        "model": "Artura",
+        "year": 2022,
+        "engine_size": "3",
+        "horsepower": 671,
+        "torque_lb_ft": 531,
+        "0_60_mph": 3.0,
+        "price": 225000
+    },
+    {
+        "make": "Mercedes-Benz",
+        "model": "C63 AMG",
+        "year": 2021,
+        "engine_size": "4",
+        "horsepower": 503,
+        "torque_lb_ft": 516,
+        "0_60_mph": 3.8,
+        "price": 70100
+    },
+    {
+        "make": "Nissan",
+        "model": "370Z",
+        "year": 2021,
+        "engine_size": "3.7",
+        "horsepower": 332,
+        "torque_lb_ft": 270,
+        "0_60_mph": 5.0,
+        "price": 30090
+    },
+    {
+        "make": "Porsche",
+        "model": "Panamera",
+        "year": 2022,
+        "engine_size": "2.9",
+        "horsepower": 325,
+        "torque_lb_ft": 331,
+        "0_60_mph": 5.3,
+        "price": 88700
+    },
+    {
+        "make": "Audi",
+        "model": "TT RS",
+        "year": 2021,
+        "engine_size": "2.5",
+        "horsepower": 394,
+        "torque_lb_ft": 354,
+        "0_60_mph": 3.6,
+        "price": 67600
+    },
+    {
+        "make": "BMW",
+        "model": "M4",
+        "year": 2022,
+        "engine_size": "3",
+        "horsepower": 473,
+        "torque_lb_ft": 406,
+        "0_60_mph": 4.1,
+        "price": 72800
+    },
+    {
+        "make": "Chevrolet",
+        "model": "Corvette Stingray",
+        "year": 2021,
+        "engine_size": "6.2",
+        "horsepower": 490,
+        "torque_lb_ft": 465,
+        "0_60_mph": 2.8,
+        "price": 59900
+    },
+    {
+        "make": "Ferrari",
+        "model": "F8 Tributo",
+        "year": 2021,
+        "engine_size": "3.9",
+        "horsepower": 710,
+        "torque_lb_ft": 568,
+        "0_60_mph": 2.8,
+        "price": 274280
+    },
+    {
+        "make": "Ford",
+        "model": "Mustang Mach 1",
+        "year": 2021,
+        "engine_size": "5",
+        "horsepower": 480,
+        "torque_lb_ft": 420,
+        "0_60_mph": 4.3,
+        "price": 52915
+    },
+    {
+        "make": "Lamborghini",
+        "model": "Urus",
+        "year": 2021,
+        "engine_size": "4",
+        "horsepower": 641,
+        "torque_lb_ft": 627,
+        "0_60_mph": 3.6,
+        "price": 218009
+    },
+    {
+        "make": "Porsche",
+        "model": "718 Cayman",
+        "year": 2022,
+        "engine_size": "2",
+        "horsepower": 300,
+        "torque_lb_ft": 280,
+        "0_60_mph": 4.5,
+        "price": 61000
+    },
+    {
+        "make": "Acura",
+        "model": "NSX",
+        "year": 2022,
+        "engine_size": "3.5",
+        "horsepower": 573,
+        "torque_lb_ft": 476,
+        "0_60_mph": 2.9,
+        "price": 159495
+    },
+    {
+        "make": "Aston Martin",
+        "model": "Vantage",
+        "year": 2022,
+        "engine_size": "4",
+        "horsepower": 503,
+        "torque_lb_ft": 505,
+        "0_60_mph": 3.5,
+        "price": 142086
+    },
+    {
+        "make": "Bentley",
+        "model": "Continental GT",
+        "year": 2021,
+        "engine_size": "6",
+        "horsepower": 626,
+        "torque_lb_ft": 664,
+        "0_60_mph": 3.3,
+        "price": 219800
+    },
+    {
+        "make": "Bugatti",
+        "model": "Chiron",
+        "year": 2022,
+        "engine_size": "8",
+        "horsepower": 1500,
+        "torque_lb_ft": 1180,
+        "0_60_mph": 2.4,
+        "price": 3000000
+    },
+    {
+        "make": "Dodge",
+        "model": "Challenger SRT Hellcat Redeye",
+        "year": 2022,
+        "engine_size": "6.2",
+        "horsepower": 797,
+        "torque_lb_ft": 707,
+        "0_60_mph": 3.4,
+        "price": 74290
+    },
+    {
+        "make": "Jaguar",
+        "model": "F-Type",
+        "year": 2022,
+        "engine_size": "3",
+        "horsepower": 380,
+        "torque_lb_ft": 339,
+        "0_60_mph": 4.9,
+        "price": 71900
+    },
+    {
+        "make": "Koenigsegg",
+        "model": "Jesko",
+        "year": 2022,
+        "engine_size": "5",
+        "horsepower": 1600,
+        "torque_lb_ft": 1106,
+        "0_60_mph": 2.5,
+        "price": 3000000
+    },
+    {
+        "make": "Lexus",
+        "model": "LC 500",
+        "year": 2022,
+        "engine_size": "5",
+        "horsepower": 471,
+        "torque_lb_ft": 398,
+        "0_60_mph": 4.4,
+        "price": 92950
+    },
+    {
+        "make": "Lotus",
+        "model": "Evora GT",
+        "year": 2021,
+        "engine_size": "3.5",
+        "horsepower": 416,
+        "torque_lb_ft": 317,
+        "0_60_mph": 3.8,
+        "price": 105000
+    },
+    {
+        "make": "Maserati",
+        "model": "GranTurismo",
+        "year": 2022,
+        "engine_size": "4.7",
+        "horsepower": 454,
+        "torque_lb_ft": 384,
+        "0_60_mph": 4.7,
+        "price": 134300
+    },
+    {
+        "make": "Mazda",
+        "model": "MX-5 Miata",
+        "year": 2021,
+        "engine_size": "2",
+        "horsepower": 181,
+        "torque_lb_ft": 151,
+        "0_60_mph": 6.5,
+        "price": 26830
+    },
+    {
+        "make": "McLaren",
+        "model": "GT",
+        "year": 2022,
+        "engine_size": "4",
+        "horsepower": 620,
+        "torque_lb_ft": 465,
+        "0_60_mph": 3.1,
+        "price": 213195
+    },
+    {
+        "make": "Mercedes-Benz",
+        "model": "SLS AMG",
+        "year": 2015,
+        "engine_size": "6.2",
+        "horsepower": 622,
+        "torque_lb_ft": 468,
+        "0_60_mph": 3.7,
+        "price": 221580
+    },
+    {
+        "make": "Pagani",
+        "model": "Huayra",
+        "year": 2022,
+        "engine_size": "6",
+        "horsepower": 764,
+        "torque_lb_ft": 738,
+        "0_60_mph": 2.8,
+        "price": 2800000
+    },
+    {
+        "make": "Porsche",
+        "model": "718 Cayman GT4",
+        "year": 2022,
+        "engine_size": "4",
+        "horsepower": 414,
+        "torque_lb_ft": 309,
+        "0_60_mph": 4.2,
+        "price": 100550
+    },
+    {
+        "make": "Rimac",
+        "model": "Nevera",
+        "year": 2022,
+        "engine_size": "Electric",
+        "horsepower": 1914,
+        "torque_lb_ft": 1696,
+        "0_60_mph": 1.95,
+        "price": 2400000
+    },
+    {
+        "make": "Rolls-Royce",
+        "model": "Wraith",
+        "year": 2021,
+        "engine_size": "6.8",
+        "horsepower": 624,
+        "torque_lb_ft": 605,
+        "0_60_mph": 4.4,
+        "price": 330000
+    },
+    {
+        "make": "Tesla",
+        "model": "Roadster",
+        "year": 2022,
+        "engine_size": "Electric",
+        "horsepower": "1000+",
+        "torque_lb_ft": 737,
+        "0_60_mph": 1.9,
+        "price": 200000
+    }
+]

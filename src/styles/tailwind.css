@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+    --color-bg-primary: #181818;
+    --color-bg-secondary: #1f1e1e;
+
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #b2b2b2;
+
+    --color-primary: #d2401e;
+    --color-secondary: #b7903b;
+};
+
+.gradient {
+    @apply bg-linear-to-b from-bg-primary/70 via-bg-primary/40 to-bg-primary;
+}
+
+.title {
+    @apply text-4xl md:text-6xl font-black scale-y-125 uppercase text-center drop-shadow-lg;
+}
+
+.section-header {
+    @apply text-center mb-16;
+}
+
+.section-title {
+    @apply text-4xl font-bold mt-2 relative;
+}
+
+.section-title::after {
+    @apply content-[''] absolute inset-0 w-24 h-1 bg-primary mx-auto mt-14;
+}
+
+.section-subtitle {
+    @apply text-primary uppercase text-sm font-bold;
+}
+
+.btn-fill {
+    @apply px-8 py-4 bg-primary text-black font-bold uppercase tracking-wider rounded hover:bg-white transition-all duration-300;
+}
+
+.btn-fill-alt {
+    @apply px-8 py-4 bg-black text-white font-bold rounded hover:bg-white hover:text-black transition-colors shadow-lg
+}
+
+.btn-outline {
+    @apply px-8 py-4 border border-white text-white font-bold uppercase tracking-wider rounded hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-sm;
+}
+
+.btn-outline-alt {
+    @apply px-10 py-4 bg-transparent border-2 border-black text-black font-bold rounded hover:bg-white hover:text-black hover:border-white transition-colors;
+}

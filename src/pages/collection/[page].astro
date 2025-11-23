@@ -1,0 +1,66 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import rawCars from "../../content/cars.json";
+import { fetchWikiImage } from "../../utils/wiki";
+import CarCard from "../../components/CarCard.astro";
+
+export async function getStaticPaths({ paginate }: any) {
+  return paginate(rawCars, { pageSize: 12 });
+}
+
+const { page }: any = Astro.props; 
+
+const carsWithImages = await Promise.all(
+  page.data.map(async (car: any) => {
+    const image = await fetchWikiImage(car.make, car.model);
+    return { ...car, image };
+  })
+);
+---
+
+<Layout title={`Колекция - Страница ${page.currentPage}`}>
+<section class="flex flex-col gap-16">
+  <section class="py-32 text-white relative overflow-hidden">
+    <img 
+      src="/collection.jpg"
+      alt="Car Collection"
+      class="absolute top-0 left-0 w-full h-full object-cover z-0"
+    />
+
+    <div class="absolute top-0 left-0 w-full h-full gradient z-10"></div>
+
+    <div class="container mx-auto px-6 relative z-20 text-center">
+      <h2 class="title">Нашата Колекция</h2>
+      <p class="text-xl mb-10 font-medium text-text-secondary">Страница {page.currentPage} от {page.lastPage}</p>
+    </div>
+  </section>
+
+  <section class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+    {carsWithImages.map((car) => (
+      <CarCard car={car} />
+    ))}
+  </section>
+
+  <section class="flex justify-center gap-4 mb-8">
+    {page.url.prev ? (
+      <a href={page.url.prev} class="btn-outline">
+        <i class="ph ph-arrow-left"></i> Предишна
+      </a>
+    ) : (
+      <span class="btn-outline opacity-50 cursor-not-allowed">
+          <i class="ph ph-arrow-left"></i> Предишна
+      </span>
+    )}
+
+    {page.url.next ? (
+      <a href={page.url.next} class="btn-fill">
+        Следваща <i class="ph ph-arrow-right"></i>
+      </a>
+    ) : (
+      <span class="btn-fill opacity-50 cursor-not-allowed">
+        Следваща <i class="ph ph-arrow-right"></i>
+      </span>
+    )}
+  </section>
+</section>
+</Layout>
