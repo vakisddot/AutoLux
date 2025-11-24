@@ -28,25 +28,29 @@
 }
 
 .section-title::after {
-    @apply content-[''] absolute inset-0 w-24 h-1 bg-primary mx-auto mt-14;
+    @apply content-[''] block w-24 h-1 bg-primary mx-auto mt-14;
 }
 
 .section-subtitle {
     @apply text-primary uppercase text-sm font-bold;
 }
 
+.btn {
+    @apply px-8 py-4 flex items-center justify-center text-center gap-2 font-bold uppercase hover:bg-white transition-all duration-300;
+}
+
 .btn-fill {
-    @apply px-8 py-4 bg-primary text-black font-bold uppercase tracking-wider rounded hover:bg-white transition-all duration-300;
+    @apply bg-primary text-black rounded hover:bg-white;
 }
 
 .btn-fill-alt {
-    @apply px-8 py-4 bg-black text-white font-bold rounded hover:bg-white hover:text-black transition-colors shadow-lg
+    @apply bg-black text-white hover:bg-white hover:text-black;
 }
 
 .btn-outline {
-    @apply px-8 py-4 border border-white text-white font-bold uppercase tracking-wider rounded hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-sm;
+    @apply border border-white text-white rounded hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-sm;
 }
 
 .btn-outline-alt {
-    @apply px-10 py-4 bg-transparent border-2 border-black text-black font-bold rounded hover:bg-white hover:text-black hover:border-white transition-colors;
+    @apply bg-transparent border-2 border-black text-black font-bold rounded hover:bg-white hover:text-black hover:border-white;
 }

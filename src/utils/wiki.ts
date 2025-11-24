@@ -1,4 +1,4 @@
-export async function fetchWikiImage(make: string, model: string) {
+export async function fetchWikiImage(make: string, model: string): Promise<string> {
     try {
         const searchQuery = `${make}_${model}`;
         const endpoint = `https://en.wikipedia.org/api/rest_v1/page/media-list/${encodeURIComponent(

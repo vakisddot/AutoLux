@@ -1,8 +1,23 @@
 ---
-const { car } = Astro.props;
+import { formatPrice } from "../utils/price";
+import { slugify } from "../utils/slugify";
+
+const { car, returnPage } = Astro.props;
+
+const slug = slugify(`${car.make}-${car.model}`)
+
+let url = `/collection/${slug}`;
+
+if (returnPage) {
+    url += `?returnPage=${returnPage}`
+}
+
+const formattedPrice = formatPrice(car.price);
 ---
 
 <article class="group bg-bg-primary rounded-lg shadow-lg transition-all duration-300 hover:scale-105">
+    
+<a href={url}>
     <div class="relative">
         <img 
         src={car.image} 
@@ -26,8 +41,9 @@ const { car } = Astro.props;
         </div>
 
         <div class="flex justify-between items-center pt-4 border-t border-gray-800">
-        <span class="text-xl font-bold text-white">&euro;{car.price}</span>
+        <span class="text-xl font-bold text-white">{formattedPrice}</span>
         <a href="#" class="text-sm text-primary border-b border-transparent hover:border-primary transition-all">Детайли</a>
         </div>
     </div>
-    </article>
+    </a>
+</article>
