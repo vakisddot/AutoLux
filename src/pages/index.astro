@@ -5,6 +5,7 @@ import rawCars from "../content/cars.json";
 import { fetchWikiImage } from "../utils/wiki";
 import CarCard from "../components/CarCard.astro";
 import HoverCard from "../components/HoverCard.astro";
+import urls from "../content/urls.json";
 
 const carsWithImages = await Promise.all(
   rawCars.slice(0, 3).map(async (car) => {
@@ -153,7 +154,7 @@ const values = [
 			</a>
 			<a href="/contacts" class="btn btn-outline">
 				<i class="ph ph-phone-call"></i>
-				+359 89 999 9999
+				{urls.phone}
 			</a>
 		</div>
 	</div>

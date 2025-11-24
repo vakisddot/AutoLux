@@ -4,6 +4,7 @@ import rawCars from "../../content/cars.json";
 import { fetchWikiImage } from "../../utils/wiki";
 import { slugify } from "../../utils/slugify";
 import { formatPrice } from "../../utils/price";
+import urls from "../../content/urls.json";
 
 export async function getStaticPaths() {
   return rawCars.map((car) => {
@@ -84,7 +85,7 @@ const specs = [
               
               <div class="flex flex-col sm:flex-row gap-4">
                   <a href="/contacts" class="btn btn-fill">
-                      <i class="ph ph-phone"></i> +359 89 999 9999
+                      <i class="ph ph-phone"></i> {urls.phone}
                   </a>
                   <a href="/contacts" class="btn btn-outline">
                       <i class="ph ph-envelope"></i> Запитване

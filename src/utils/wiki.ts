@@ -7,7 +7,7 @@ export async function fetchWikiImage(make: string, model: string): Promise<strin
 
         const response = await fetch(endpoint, {
             headers: {
-                "User-Agent": "AutoLuxDemo/1.0 (test@demo.com)",
+                "User-Agent": "AutoLuxDemo/1.0 (info@autolux.bg)",
                 Accept: "application/json",
             },
         });
