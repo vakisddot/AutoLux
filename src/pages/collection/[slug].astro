@@ -1,14 +1,15 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import rawCars from "../../content/cars.json";
-import { fetchWikiImage } from "../../utils/wiki";
+import { getCollection } from "astro:content";
 import { slugify } from "../../utils/slugify";
 import { formatPrice } from "../../utils/price";
 import urls from "../../content/urls.json";
 
 export async function getStaticPaths() {
-  return rawCars.map((car) => {
-    const slug = slugify(`${car.make}-${car.model}`);
+  const cars = await getCollection("cars");
+
+  return cars.map((car) => {
+    const slug = slugify(`${car.data.make}-${car.data.model}`);
     
     return {
       params: { slug },
@@ -19,21 +20,19 @@ export async function getStaticPaths() {
 
 const { car } = Astro.props;
 
-const image = await fetchWikiImage(car.make, car.model);
-
-const formattedPrice = formatPrice(car.price);
+const formattedPrice = formatPrice(car.data.price);
 
 const specs = [
-    { label: "Двигател", value: `${car.engine_size} L`, icon: "ph-engine" },
-    { label: "Мощност", value: `${car.horsepower} к.с.`, icon: "ph-lightning" },
-    { label: "Въртящ момент", value: `${car.torque_lb_ft} lb-ft`, icon: "ph-arrow-clockwise" },
-    { label: "Ускорение 0-100", value: `${car['0_60_mph']} сек.`, icon: "ph-timer" },
-    { label: "Година", value: car.year, icon: "ph-calendar-blank" },
+    { label: "Двигател", value: `${car.data.engine} L`, icon: "ph-engine" },
+    { label: "Мощност", value: `${car.data.horsepower} к.с.`, icon: "ph-lightning" },
+    { label: "Въртящ момент", value: `${car.data.torque} lb-ft`, icon: "ph-arrow-clockwise" },
+    { label: "Ускорение 0-100", value: `${car.data.acceleration} сек.`, icon: "ph-timer" },
+    { label: "Година", value: car.data.year, icon: "ph-calendar-blank" },
     { label: "Каросерия", value: "Coupe", icon: "ph-car-profile" },
 ];
 ---
 
-<Layout title={`${car.make} ${car.model}`}>
+<Layout title={`${car.data.make} ${car.data.model}`}>
 <section class="py-16 bg-bg-secondary text-white">
   <div class="container mx-auto px-6">
     <a 
@@ -47,8 +46,8 @@ const specs = [
       
       <div class="relative overflow-hidden shadow-2xl">
           <img 
-              src={image} 
-              alt={`${car.make} ${car.model}`}
+              src={car.data.url} 
+              alt={`${car.data.make} ${car.data.model}`}
               class="w-full object-cover"
           />
           <div class="absolute top-4 right-4 bg-primary text-black font-bold px-4 py-2 shadow-lg">
@@ -57,8 +56,8 @@ const specs = [
       </div>
 
       <div>
-          <h1 class="text-4xl md:text-5xl font-bold mb-2">{car.make} <span class="text-primary">{car.model}</span></h1>
-          <p class="text-text-secondary text-xl mb-6">{car.year} Premium Edition</p>
+          <h1 class="text-4xl md:text-5xl font-bold mb-2">{car.data.make} <span class="text-primary">{car.data.model}</span></h1>
+          <p class="text-text-secondary text-xl mb-6">{car.data.year} Premium Edition</p>
 
           <div class="text-3xl font-bold text-white mb-8 pb-8 border-b border-white/10">
               {formattedPrice}

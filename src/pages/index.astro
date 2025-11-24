@@ -1,18 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import brands from "../content/brands.json";
-import rawCars from "../content/cars.json";
-import { fetchWikiImage } from "../utils/wiki";
+import { getCollection } from "astro:content";
 import CarCard from "../components/CarCard.astro";
 import HoverCard from "../components/HoverCard.astro";
 import urls from "../content/urls.json";
 
-const carsWithImages = await Promise.all(
-  rawCars.slice(0, 3).map(async (car) => {
-    const image = await fetchWikiImage(car.make, car.model);
-    return { ...car, image };
-  })
-);
+const cars = await getCollection("cars");
 
 const values = [
 	{
@@ -128,7 +122,7 @@ const values = [
 		</div>
 
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-		{carsWithImages.map((car) => (
+		{cars.slice(0, 3).map((car) => (
 			<CarCard car={car} />
 		))}
 		</div>

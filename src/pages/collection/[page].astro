@@ -1,22 +1,18 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import rawCars from "../../content/cars.json";
-import { fetchWikiImage } from "../../utils/wiki";
+import { getCollection } from "astro:content";
 import CarCard from "../../components/CarCard.astro";
 import Pagination from "../../components/Pagination.astro";
 
 export async function getStaticPaths({ paginate }: any) {
-  return paginate(rawCars, { pageSize: 12 });
+  const cars = await getCollection("cars");
+
+  console.log(`Found ${cars.length} cars in the collection.`);
+
+  return paginate(cars, { pageSize: 12 });
 }
 
 const { page }: any = Astro.props; 
-
-const carsWithImages = await Promise.all(
-  page.data.map(async (car: any) => {
-    const image = await fetchWikiImage(car.make, car.model);
-    return { ...car, image };
-  })
-);
 ---
 
 <Layout title={`Колекция - Страница ${page.currentPage}`}>
@@ -39,7 +35,7 @@ const carsWithImages = await Promise.all(
   <Pagination page={page} />
 
   <section class="container mx-auto px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-    {carsWithImages.map((car) => (
+    {page.data.map((car: any) => (
       <CarCard car={car} returnPage={page.currentPage} />
     ))}
   </section>

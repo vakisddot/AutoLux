@@ -1,3 +1,7 @@
-# Vakïs Astro Starter
+# Autolux.bg
 
-A simple starter template for Astro, configured with Tailwind
+```bash
+npm run dev
+npm run build
+npm run fetch-images
+```

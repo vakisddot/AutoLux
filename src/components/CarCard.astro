@@ -4,7 +4,7 @@ import { slugify } from "../utils/slugify";
 
 const { car, returnPage } = Astro.props;
 
-const slug = slugify(`${car.make}-${car.model}`)
+const slug = slugify(`${car.data.make}-${car.data.model}`)
 
 let url = `/collection/${slug}`;
 
@@ -12,7 +12,7 @@ if (returnPage) {
     url += `?returnPage=${returnPage}`
 }
 
-const formattedPrice = formatPrice(car.price);
+const formattedPrice = formatPrice(car.data.price);
 ---
 
 <article id={slug} class="group bg-bg-primary rounded-lg shadow-lg transition-all duration-300 hover:scale-105">
@@ -20,8 +20,8 @@ const formattedPrice = formatPrice(car.price);
 <a href={url}>
     <div class="relative">
         <img 
-        src={car.image} 
-        alt={car.model} 
+        src={car.data.url} 
+        alt=`${car.data.make} ${car.data.model}`
         class="w-full aspect-video object-cover rounded-t-lg transition-transform"
         />
         <div class="absolute top-0 left-0 w-full h-full gradient"></div>
@@ -32,12 +32,12 @@ const formattedPrice = formatPrice(car.price);
     
     <div class="p-6">
         <div class="flex justify-between items-start mb-2">
-        <h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">{car.make} {car.model}</h3>
+        <h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">{car.data.make} {car.data.model}</h3>
         </div>
         
         <div class="flex gap-4 text-sm text-text-secondary mb-6">
-        <span class="flex items-center gap-1"><i class="ph ph-calendar-blank"></i> {car.year}</span>
-        <span class="flex items-center gap-1"><i class="ph ph-engine"></i> {car.horsepower} к.с.</span>
+        <span class="flex items-center gap-1"><i class="ph ph-calendar-blank"></i> {car.data.year}</span>
+        <span class="flex items-center gap-1"><i class="ph ph-engine"></i> {car.data.horsepower} к.с.</span>
         </div>
 
         <div class="flex justify-between items-center pt-4 border-t border-gray-800">
