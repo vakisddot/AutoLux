@@ -28,14 +28,13 @@ const specs = [
     { label: "Въртящ момент", value: `${car.torque_lb_ft} lb-ft`, icon: "ph-arrow-clockwise" },
     { label: "Ускорение 0-100", value: `${car['0_60_mph']} сек.`, icon: "ph-timer" },
     { label: "Година", value: car.year, icon: "ph-calendar-blank" },
-    { label: "Каросерия", value: "Coupe", icon: "ph-car-profile" }, // Hardcoded for demo, or add to JSON
+    { label: "Каросерия", value: "Coupe", icon: "ph-car-profile" },
 ];
 ---
 
 <Layout title={`${car.make} ${car.model}`}>
-<section class="pt-32 pb-20 bg-bg-secondary text-white min-h-screen">
+<section class="py-16 bg-bg-secondary text-white">
   <div class="container mx-auto px-6">
-    
     <a 
     id="back-link" 
     href='/collection/1'
