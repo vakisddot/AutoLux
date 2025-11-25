@@ -15,7 +15,7 @@ if (returnPage) {
 const formattedPrice = formatPrice(car.data.price);
 ---
 
-<article id={slug} class="group bg-bg-primary rounded-lg shadow-lg transition-all duration-300 hover:scale-105">
+<article id={slug} class="group bg-bg-primary border border-white/20 rounded-lg shadow-lg transition-all duration-300 hover:scale-105">
     
 <a href={url}>
     <div class="relative">
@@ -24,7 +24,7 @@ const formattedPrice = formatPrice(car.data.price);
         alt=`${car.data.make} ${car.data.model}`
         class="w-full aspect-video object-cover rounded-t-lg transition-transform"
         />
-        <div class="absolute top-0 left-0 w-full h-full gradient"></div>
+        <div class="absolute top-0 left-0 w-full h-full gradient-soft"></div>
         <div class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded">
         НАЛИЧЕН
         </div>

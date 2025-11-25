@@ -3,5 +3,88 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-<h1>TODO :)</h1>
+    <div id="ui-container" class="fixed right-4 bottom-4 z-10 bg-bg-primary/50 p-4 rounded-lg backdrop-blur-sm text-xs md:text-md">
+        <h3 class="text-lg font-bold mb-4">Избери кола:</h3>
+        <div class="button-group flex flex-col gap-2 *:cursor-pointer">
+            <button class="car-btn btn btn-fill" data-path="models/2018_bugatti_chiron_sport/scene.gltf">Bugatti Chiron</button>
+            <button class="car-btn btn btn-fill" data-path="models/2007_lamborghini_reventon/scene.gltf">Lamborghini Reventon</button>
+            <button class="car-btn btn btn-fill" data-path="models/ferrari_f40/scene.gltf">Ferrari F40</button>
+        </div>
+    </div>
+
+  <canvas id="3d"></canvas>
+
+  <script>
+    import * as THREE from 'three';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+    import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+
+    const canvas = document.getElementById('3d')
+    const width = window.innerWidth, height = window.innerHeight;
+
+    const camera = new THREE.PerspectiveCamera( 70, width / height, 0.01, 20 );
+    camera.position.set(2, 2, 5);
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x444444);
+
+    const light = new THREE.DirectionalLight( 0xffffff, 1 );
+    light.position.set( 1, 1, 2 ).normalize();
+    scene.add( light );
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1); 
+    scene.add(ambientLight)
+
+    const renderer = new THREE.WebGLRenderer( { canvas: canvas, antialias: true } );
+    renderer.setSize( width, height );
+    renderer.setAnimationLoop( animate );
+
+    const controls = new OrbitControls( camera, renderer.domElement );
+    const loader = new GLTFLoader();
+
+    let currentModel = null;
+
+    async function loadCar(path) {
+      if (currentModel) {
+        scene.remove(currentModel);
+      }
+
+      try {
+        const gltf = await loader.loadAsync(path);
+        currentModel = gltf.scene;
+        
+        currentModel.position.set(0, 0, 0);
+        
+        scene.add(currentModel);
+      } catch (error) {
+        console.error("Error loading model:", error);
+      }
+    }
+
+    const buttons = document.querySelectorAll('.car-btn');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const path = e.target.getAttribute('data-path');
+        loadCar(path);
+      });
+    });
+
+    loadCar('models/2018_bugatti_chiron_sport/scene.gltf');
+
+    function animate( time ) {
+      controls.update();
+
+      if (currentModel) {
+        currentModel.rotation.y += 0.001;
+      }
+
+      renderer.render( scene, camera );
+    }
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
 </Layout>

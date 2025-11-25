@@ -15,6 +15,10 @@
     @apply absolute top-0 left-0 w-full h-full bg-linear-to-b from-bg-primary/70 via-bg-primary/40 to-bg-primary;
 }
 
+.gradient-soft {
+    @apply absolute top-0 left-0 w-full h-full bg-linear-to-b from-transparent to-bg-primary/70;
+}
+
 .title {
     @apply text-4xl md:text-6xl font-black scale-y-125 uppercase text-center drop-shadow-lg;
 }

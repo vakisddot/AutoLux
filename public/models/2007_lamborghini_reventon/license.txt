@@ -1,0 +1,11 @@
+Model Information:
+* title:	2007 Lamborghini Reventon
+* source:	https://sketchfab.com/3d-models/2007-lamborghini-reventon-78698a3a5ee540fda63470802387ea90
+* author:	OUTPISTON (https://sketchfab.com/outpiston)
+
+Model License:
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "2007 Lamborghini Reventon" (https://sketchfab.com/3d-models/2007-lamborghini-reventon-78698a3a5ee540fda63470802387ea90) by OUTPISTON (https://sketchfab.com/outpiston) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
