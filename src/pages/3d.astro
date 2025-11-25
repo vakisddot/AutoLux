@@ -2,16 +2,16 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
-    <div id="ui-container" class="fixed right-4 bottom-4 z-10 bg-bg-primary/50 p-4 rounded-lg backdrop-blur-sm text-xs md:text-md">
-        <h3 class="text-lg font-bold mb-4">Избери кола:</h3>
-        <div class="button-group flex flex-col gap-2 *:cursor-pointer">
-            <button class="car-btn btn btn-fill" data-path="models/2018_bugatti_chiron_sport/scene.gltf">Bugatti Chiron</button>
-            <button class="car-btn btn btn-fill" data-path="models/2007_lamborghini_reventon/scene.gltf">Lamborghini Reventon</button>
-            <button class="car-btn btn btn-fill" data-path="models/ferrari_f40/scene.gltf">Ferrari F40</button>
-        </div>
-    </div>
-
+<Layout title="3D">
+  <div id="ui-container" class="fixed right-4 bottom-4 z-10 bg-bg-primary/50 p-4 rounded-lg backdrop-blur-sm text-xs md:text-md">
+      <h3 class="text-lg font-bold mb-4">Избери кола:</h3>
+      <div class="button-group flex flex-col gap-2 *:cursor-pointer">
+          <button class="car-btn btn btn-fill" data-path="models/2018_bugatti_chiron_sport/scene.gltf">Bugatti Chiron</button>
+          <button class="car-btn btn btn-fill" data-path="models/2007_lamborghini_reventon/scene.gltf">Lamborghini Reventon</button>
+          <button class="car-btn btn btn-fill" data-path="models/ferrari_f40/scene.gltf">Ferrari F40</button>
+      </div>
+  </div>
+    
   <canvas id="3d"></canvas>
 
   <script>

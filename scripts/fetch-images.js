@@ -16,7 +16,7 @@ async function fetchWikiImage(make, model, id, total) {
 
         const response = await fetch(endpoint, {
             headers: {
-                "User-Agent": "AutoLuxDemo/1.0 (info@autolux.bg)",
+                "User-Agent": "AutoluxDemo/1.0 (info@autolux.bg)",
                 Accept: "application/json",
             },
         });

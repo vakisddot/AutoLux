@@ -1,0 +1,53 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import NewsCard from "../../components/NewsCard.astro";
+import Pagination from "../../components/Pagination.astro";
+
+export async function getStaticPaths({ paginate }: any) {
+  const allNews = await getCollection("news");
+
+  const sortedNews = allNews.sort((a, b) => 
+    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  );
+
+  console.log(`Found ${sortedNews.length} news articles.`);
+
+  return paginate(sortedNews, { pageSize: 9 });
+}
+
+const { page }: any = Astro.props; 
+---
+
+<Layout title={`Новини - Страница ${page.currentPage}`}>
+<section class="flex flex-col gap-16">
+  <section class="py-32 text-white relative overflow-hidden">
+    <img 
+      src="/collection2.jpg" 
+      alt="Car Collection"
+      class="absolute inset-0 w-full h-full object-cover z-0"
+    />
+
+    <div class="gradient"></div>
+
+    <div class="section-header">
+      <h3 class="section-subtitle">Блог & Събития</h3>
+      <h2 class="title mb-4">Последни Новини</h2>
+      <p class="subtitle">
+        Следете света на луксозните автомобили. Нови модели, ексклузивни събития и новини от Autolux.
+      </p>
+    </div>
+  </section>
+
+  <section class="container mx-auto px-6 mb-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+      {page.data.map((post: any) => (
+        <NewsCard post={post} />
+      ))}
+    </div>
+
+    <Pagination page={page} />
+  </section>
+
+</section>
+</Layout>

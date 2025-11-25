@@ -48,7 +48,7 @@ const contactInfo = [
         <div class="flex flex-col gap-8">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
              {contactInfo.map(item => (
-                <div class="group bg-bg-secondary p-6 rounded-xl border border-white/10 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
+                <div class="group bg-bg-secondary p-6 rounded-xl glowy-border transition-all duration-300 hover:-translate-y-1">
                     <div class="w-10 h-10 mb-4 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xl group-hover:bg-primary group-hover:text-black transition-colors">
                         <i class={`ph ${item.icon}`}></i>
                     </div>
@@ -58,7 +58,7 @@ const contactInfo = [
              ))}
           </div>
 
-          <div class="w-full h-80 bg-bg-secondary rounded-xl overflow-hidden border border-white/10 relative shadow-2xl">
+          <div class="w-full h-80 bg-bg-secondary rounded-xl overflow-hidden glowy-border relative shadow-2xl">
              <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2300.7079964927957!2d27.9237233260174!3d43.20891033799625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a4540939dfa6d5%3A0x3d401ef3c09a59bf!2sUniversity%20of%20Economics%20%E2%80%93%20Varna!5e0!3m2!1sen!2sbg!4v1764001943525!5m2!1sen!2sbg"
                 width="100%" 
@@ -68,14 +68,14 @@ const contactInfo = [
                 loading="lazy">
              </iframe>
              
-             <div class="absolute top-4 right-4 bg-bg-primary/90 backdrop-blur px-4 py-2 rounded border-l-2 border-primary">
-                <p class="text-white font-bold text-sm">AutoLux Showroom</p>
+             <div class="absolute top-4 right-4 tag">
+                <p>Autolux Showroom</p>
              </div>
           </div>
 
         </div>
 
-        <div class="bg-bg-secondary p-8 md:p-10 rounded-xl border border-white/10 shadow-2xl h-full">
+        <div class="bg-bg-secondary p-8 md:p-10 rounded-xl glowy-border shadow-2xl h-full">
             <h2 class="text-2xl font-bold text-white mb-2">Изпратете запитване</h2>
             <p class="text-text-secondary mb-8 text-sm">Попълнете формата и наш консултант ще се свърже с Вас до 24 часа.</p>
 

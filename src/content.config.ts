@@ -1,5 +1,6 @@
 import { defineCollection, z } from "astro:content";
 import { csvLoader } from "@ascorbic/csv-loader";
+import { glob } from 'astro/loaders';
 
 const cars = defineCollection({
     loader: csvLoader({
@@ -20,4 +21,16 @@ const cars = defineCollection({
     }),
 });
 
-export const collections = { cars };
+const news = defineCollection({
+    loader: glob({ pattern: "**/*.md", base: "./src/content/news" }),
+    schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        pubDate: z.date(),
+        author: z.string().default("Autolux Team"),
+        tags: z.array(z.string()).optional(),
+        slug: z.string(),
+    }),
+});
+
+export const collections = { cars, news };

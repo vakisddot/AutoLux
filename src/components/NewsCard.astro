@@ -1,0 +1,53 @@
+---
+const { post } = Astro.props;
+
+const formattedDate = post.data.pubDate.toLocaleDateString('bg-BG', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+---
+
+<article class="bg-bg-secondary glowy-border duration-300 flex flex-col transition-all hover:scale-105">
+  <a href={`/news/${post.data.slug}`} class="relative h-64 overflow-hidden block">
+    <img 
+      src=`/news/${post.data.slug}.jpg`
+      alt={post.data.title}
+      class="w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-black/40 hover:bg-transparent transition-all"></div>
+    
+    <div class="absolute top-4 left-4 tag">
+      <span>{formattedDate}</span>
+    </div>
+  </a>
+
+  <div class="p-6 flex flex-col">
+    <div class="flex gap-2 mb-3">
+        {post.data.tags && post.data.tags.slice(0, 2).map((tag: string) => (
+            <span class="text-xs uppercase tracking-wider text-primary/80 border border-primary/20 px-2 py-0.5 rounded-sm">
+                {tag}
+            </span>
+        ))}
+    </div>
+
+    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors line-clamp-2">
+      <a href={`/news/${post.slug}`}>
+        {post.data.title}
+      </a>
+    </h3>
+
+    <p class="text-text-secondary text-sm leading-relaxed mb-6 line-clamp-3">
+      {post.data.description}
+    </p>
+
+    <div class="mt-auto border-t border-white/10 pt-4 flex justify-between items-center">
+        <span class="text-xs text-text-secondary">
+            От: {post.data.author}
+        </span>
+        <a href={`/news/${post.data.slug}`} class="text-sm font-medium text-white hover:text-primary flex items-center gap-2 transition-colors">
+            Прочети още <i class="ph ph-arrow-right"></i>
+        </a>
+    </div>
+  </div>
+</article>
