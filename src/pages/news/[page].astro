@@ -21,7 +21,7 @@ const { page }: any = Astro.props;
 
 <Layout title={`Новини - Страница ${page.currentPage}`}>
 <section class="flex flex-col gap-16">
-  <section class="py-32 text-white relative overflow-hidden">
+  <section class="py-32 relative overflow-hidden">
     <img 
       src="/collection2.jpg" 
       alt="Car Collection"
@@ -30,7 +30,7 @@ const { page }: any = Astro.props;
 
     <div class="gradient"></div>
 
-    <div class="section-header">
+    <div class="section-header container mx-auto">
       <h3 class="section-subtitle">Блог & Събития</h3>
       <h2 class="title mb-4">Последни Новини</h2>
       <p class="subtitle">

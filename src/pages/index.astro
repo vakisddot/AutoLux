@@ -83,31 +83,31 @@ const values = [
 		</div>
 
 		<div class="w-full py-12 relative">
-		<div class="text-center mb-10">
-			<span class="text-text-secondary text-sm uppercase tracking-widest font-bold">Официални партньори</span>
-		</div>
-
-		<div class="overflow-hidden flex">
-			<div class="animate-marquee flex gap-20 items-center px-8">
-				{[...brands, ...brands].map((brand) => (
-					<a 
-					href={brand.url} 
-					target="_blank" 
-					rel="noopener noreferrer"
-					class="group marquee relative block transition-all duration-300 opacity-20 hover:opacity-100 hover:scale-110"
-					title={`Посети сайта на ${brand.name}`}
-					>
-					<img 
-						src={brand.logo} 
-						alt={brand.name} 
-						class="w-32 h-32" 
-					/>
-					<p class="uppercase text-sm mt-2">{brand.name}</p>
-					
-					</a>
-				))}
+			<div class="text-center mb-10">
+				<span class="text-text-secondary text-sm uppercase tracking-widest font-bold">Официални партньори</span>
 			</div>
-		</div>
+
+			<div class="overflow-hidden flex">
+				<div class="animate-marquee flex gap-12 lg:gap-20 items-center px-8">
+					{[...brands, ...brands].map((brand) => (
+						<a 
+						href={brand.url} 
+						target="_blank" 
+						rel="noopener noreferrer"
+						class="group marquee relative block transition-all duration-300 opacity-20 hover:opacity-100 hover:scale-110"
+						title={`Посети сайта на ${brand.name}`}
+						>
+						<img 
+							src={brand.logo} 
+							alt={brand.name} 
+							class="w-16 h-16 lg:w-32 lg:h-32" 
+						/>
+						<p class="uppercase text-xs lg:text-sm mt-2">{brand.name}</p>
+						
+						</a>
+					))}
+				</div>
+			</div>
 		</div>
 	</div>
 </section>

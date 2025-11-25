@@ -2,24 +2,73 @@
 import urls from "../content/urls.json";
 
 const currYear = new Date().getFullYear();
-const emailFull = "mailto:" + urls.email;
+const emailFull = "mailto:vakisbeats@gmail.com";
+
+// Mock data for display - you likely have these in a config
+const contactInfo = {
+    phone: "+359 88 123 4567",
+    address: "Sofia, Bulgaria, Blvd. Bulgaria 100",
+    mapsLink: "https://maps.google.com"
+};
 ---
-<footer class="bg-bg-secondary flex flex-col items-center py-4 mt-auto">
-    <section class="flex flex-col items-center">
-        <ul id="socials" class="flex gap-4">
-            <li class="highlight"><a href={emailFull}><i class="ph ph-envelope"></i></a></li>
-            <li class="highlight"><a href={urls.github}><i class="ph ph-github-logo"></i></a></li>
-            <li class="highlight"><a href={urls.instagram}><i class="ph ph-instagram-logo"></i></a></li>
-            <li class="highlight"><a href={urls.youtube}><i class="ph ph-youtube-logo"></i></a></li>
-            <li class="highlight"><a href={urls.tiktok}><i class="ph ph-tiktok-logo"></i></a></li>
-        </ul>
 
-        <p class="text-center py-2">
-            &copy; {currYear} <span class="font-bold">Autolux.bg</span>. All rights reserved.
-        </p>
-    </section>
+<footer class="bg-bg-secondary text-text-secondary py-8 mt-auto">
+    <div class="container mx-auto px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12 justify-items-center text-center lg:text-left">
+            <div class="flex flex-col items-center lg:items-start gap-4">
+                <a href="/" class="flex items-center gap-2">
+                    <img src="/logo.svg" alt="Autolux Logo" class="w-12 opacity-90"> 
+                    <p class="text-white font-bold text-xl"><span class="text-primary">Auto</span>lux.bg</p>
+                </a>
+                <p class="text-sm leading-relaxed max-w-xs">
+                    Вашият доверен партньор в света на луксозните автомобили. Качество, стил и безкомпромисно обслужване.
+                </p>
+                <ul class="flex gap-4 mt-2">
+                    <li><a href={urls.instagram} class="hover:text-primary transition-colors duration-300"><i class="ph ph-instagram-logo text-2xl"></i></a></li>
+                    <li><a href={urls.github} class="hover:text-primary transition-colors duration-300"><i class="ph ph-github-logo text-2xl"></i></a></li>
+                </ul>
+            </div>
 
-    <p class="text-text-secondary w-full text-center pt-2">
-        Made by <a href={urls.web} class="font-bold">Vakïs Interactive</a>
-    </p>
+            <div>
+                <h3 class="text-white font-bold uppercase tracking-wider mb-6">Навигация</h3>
+                <ul class="flex flex-col gap-3">
+                    <li><a href="/services" class="hover:text-primary transition-colors">Услуги</a></li>
+                    <li><a href="/collection/1" class="hover:text-primary transition-colors">Колекция</a></li>
+                    <li><a href="/news/1" class="hover:text-primary transition-colors">Новини</a></li>
+                    <li><a href="/3d" class="hover:text-primary transition-colors">3D</a></li>
+                    <li><a href="/contacts" class="hover:text-primary transition-colors">Контакти</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-white font-bold uppercase tracking-wider mb-6">Контакти</h3>
+                <ul class="flex flex-col gap-4">
+                    <li class="flex items-start gap-3">
+                        <i class="ph ph-map-pin text-primary text-xl mt-0.5"></i>
+                        <a href="#" target="_blank" class="hover:text-white transition-colors">{urls.address}</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="ph ph-phone text-primary text-xl"></i>
+                        <a href="#" class="hover:text-white transition-colors">{urls.phone}</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="ph ph-envelope text-primary text-xl"></i>
+                        <a href={emailFull} class="hover:text-white transition-colors">{urls.email}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="border-white/10 mb-8" />
+
+        <div class="flex flex-col md:flex-row justify-between items-center text-sm text-text-secondary">
+            <p>
+                &copy; {currYear} <span class="font-bold">Autolux.bg</span>. Всички права запазени.
+            </p>
+
+            <p class="mt-2 md:mt-0">
+                Design & Dev by <a href={urls.web} class="font-bold text-white hover:text-primary transition-colors">Vakïs Interactive</a>
+            </p>
+        </div>
+    </div>
 </footer>
