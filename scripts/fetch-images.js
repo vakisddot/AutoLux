@@ -6,8 +6,8 @@ const INPUT_FILE = "data/cars_raw.csv";
 const OUTPUT_FILE = "data/cars.csv";
 
 async function fetchWikiImage(make, model, id, total) {
-    const searchQuery = `${make}_${model}`;
-    console.log(`(${id} / ${total}) Fetching image for: ${make} ${model}...`);
+    const searchQuery = `${make.trim()} ${model.trim().split(' ')[0]}`.split(' ').join('_');
+    console.log(`(${id} / ${total}) Fetching image for: ${searchQuery}...`);
 
     try {
         const endpoint = `https://en.wikipedia.org/api/rest_v1/page/media-list/${encodeURIComponent(
@@ -49,6 +49,23 @@ async function fetchWikiImage(make, model, id, total) {
 
 async function main() {
     try {
+        try {
+            await fs.access(INPUT_FILE);
+        } catch {
+            throw new Error(`Input file not found: ${INPUT_FILE}`);
+        }
+
+        // intersting logic here
+        try {
+            await fs.access(OUTPUT_FILE);
+
+            throw new Error(
+                `Output file already exists: ${OUTPUT_FILE}. Delete it if you want to fetch images again.`
+            );
+        } catch (err) {
+            if (err.message.includes("Output file already exists")) throw err;
+        }
+
         const csvData = (await fs.readFile(INPUT_FILE, "utf-8"))
             .replace(/^\uFEFF/, ""); // Remove BOM
 
@@ -70,10 +87,10 @@ async function main() {
 
             enrichedRecords.push({
                 ...car,
-                url: url,
+                url: `${url}`,
             });
 
-            await new Promise((resolve) => setTimeout(resolve, 10));
+            await new Promise((resolve) => setTimeout(resolve, 5));
         }
 
         const outputCsv = stringify(enrichedRecords, {

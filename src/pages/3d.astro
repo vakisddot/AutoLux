@@ -3,13 +3,20 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="3D">
-  <div id="ui-container" class="fixed right-4 bottom-4 z-10 bg-bg-primary/50 p-4 rounded-lg backdrop-blur-sm text-xs md:text-md">
-      <h3 class="text-lg font-bold mb-4">Избери кола:</h3>
-      <div class="button-group flex flex-col gap-2 *:cursor-pointer">
-          <button class="car-btn btn btn-fill" data-path="models/2018_bugatti_chiron_sport/scene.gltf">Bugatti Chiron</button>
-          <button class="car-btn btn btn-fill" data-path="models/2007_lamborghini_reventon/scene.gltf">Lamborghini Reventon</button>
-          <button class="car-btn btn btn-fill" data-path="models/ferrari_f40/scene.gltf">Ferrari F40</button>
-      </div>
+  <div id="ui-container" class="opacity-90 fixed right-4 bottom-4 z-10 bg-bg-primary/50 p-4 rounded-lg backdrop-blur-sm text-xs md:text-md glowy-border">
+    <div class="flex justify-between items-center gap-4">
+      <h3 class="text-lg font-bold">Избери кола:</h3>
+      <button id="collapse-btn" class="rounded-full border-2 border-primary w-6 h-6 flex items-center justify-center cursor-pointer" onclick="collapseMenu()"><i id="collapse-icon" class="ph ph-arrow-up text-primary"></i></button>
+    </div>
+      
+    <div id="car-menu" class="button-group flex flex-col gap-2 *:cursor-pointer mt-4 hidden">
+        <button class="car-btn btn btn-fill" data-path="models/2018_bugatti_chiron_sport/scene.gltf">Bugatti Chiron</button>
+        <button class="car-btn btn btn-fill" data-path="models/2007_lamborghini_reventon/scene.gltf">Lamborghini Reventon</button>
+        <button class="car-btn btn btn-fill" data-path="models/ferrari_f40/scene.gltf">Ferrari F40</button>
+        <button class="car-btn btn btn-fill" data-path="models/1996_ferrari_f50_gt/scene.gltf">Ferrari F50 GT</button>
+        <button class="car-btn btn btn-fill" data-path="models/2018_porsche_911_gt3_rs/scene.gltf">Porsche 911 GT3 RS</button>
+        <button class="car-btn btn btn-fill" data-path="models/2019_aston_martin_valhalla_concept/scene.gltf">Aston Martin Valhalla</button>
+    </div>
   </div>
     
   <canvas id="3d"></canvas>
@@ -19,72 +26,122 @@ import Layout from "../layouts/Layout.astro";
     import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
     import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
-    const canvas = document.getElementById('3d')
+    const canvas = document.getElementById('3d');
     const width = window.innerWidth, height = window.innerHeight;
 
-    const camera = new THREE.PerspectiveCamera( 70, width / height, 0.01, 20 );
-    camera.position.set(2, 2, 5);
-
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x444444);
+    scene.background = new THREE.Color(0x111111);
 
-    const light = new THREE.DirectionalLight( 0xffffff, 1 );
-    light.position.set( 1, 1, 2 ).normalize();
-    scene.add( light );
+    const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
+    camera.position.set(5, 2, 5);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 1); 
-    scene.add(ambientLight)
+    const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+    renderer.setSize(width, height);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping; // cinematic lighting
+    renderer.toneMappingExposure = 1.0;
+    renderer.setAnimationLoop(animate);
 
-    const renderer = new THREE.WebGLRenderer( { canvas: canvas, antialias: true } );
-    renderer.setSize( width, height );
-    renderer.setAnimationLoop( animate );
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.maxPolarAngle = Math.PI / 2 - 0.05; // prevent camera going below ground
+    controls.minDistance = 2;
+    controls.maxDistance = 10;
 
-    const controls = new OrbitControls( camera, renderer.domElement );
+    const dirLight = new THREE.DirectionalLight(0xffffff, 2);
+    dirLight.position.set(5, 10, 7);
+    dirLight.castShadow = true;
+    dirLight.shadow.mapSize.width = 2048;
+    dirLight.shadow.mapSize.height = 2048;
+    dirLight.shadow.bias = -0.0001;
+    scene.add(dirLight);
+
+    const spotLight = new THREE.SpotLight(0xffffff, 5);
+    spotLight.position.set(-5, 5, -5);
+    spotLight.lookAt(0,0,0);
+    scene.add(spotLight);
+
+    const planeGeometry = new THREE.PlaneGeometry(100, 100);
+    const planeMaterial = new THREE.ShadowMaterial({ opacity: 0.4 });
+    const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+    plane.rotation.x = -Math.PI / 2;
+    plane.receiveShadow = true;
+    scene.add(plane);
+
     const loader = new GLTFLoader();
+    let currentModel: any = null;
 
-    let currentModel = null;
+    async function loadCar(path: string) {
+        if (currentModel) {
+            scene.remove(currentModel);
+        }
 
-    async function loadCar(path) {
-      if (currentModel) {
-        scene.remove(currentModel);
-      }
+        try {
+            const gltf = await loader.loadAsync(path);
+            currentModel = gltf.scene;
 
-      try {
-        const gltf = await loader.loadAsync(path);
-        currentModel = gltf.scene;
-        
-        currentModel.position.set(0, 0, 0);
-        
-        scene.add(currentModel);
-      } catch (error) {
-        console.error("Error loading model:", error);
-      }
+            const box = new THREE.Box3().setFromObject(currentModel);
+            const center = box.getCenter(new THREE.Vector3());
+            const size = box.getSize(new THREE.Vector3());
+
+            currentModel.position.x += (currentModel.position.x - center.x);
+            currentModel.position.y += (currentModel.position.y - center.y);
+            currentModel.position.z += (currentModel.position.z - center.z);
+            
+            // lift it so wheels touch the ground
+            currentModel.position.y = size.y / 32; 
+
+            // enable shadows on all car parts
+            currentModel.traverse((child: any) => {
+                if (child.isMesh) {
+                    child.castShadow = true;
+                    child.receiveShadow = true;
+                }
+            });
+
+            scene.add(currentModel);
+        } catch (error) {
+            console.error("Error loading model:", error);
+        }
     }
 
     const buttons = document.querySelectorAll('.car-btn');
     buttons.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const path = e.target.getAttribute('data-path');
-        loadCar(path);
-      });
+        btn.addEventListener('click', (e: any) => {
+            const path = e.target.getAttribute('data-path');
+            loadCar(path);
+        });
     });
 
     loadCar('models/2018_bugatti_chiron_sport/scene.gltf');
 
-    function animate( time ) {
-      controls.update();
+    function animate() {
+        controls.update();
+        
+        if (currentModel) 
+          currentModel.rotation.y += 0.001; 
 
-      if (currentModel) {
-        currentModel.rotation.y += 0.001;
-      }
-
-      renderer.render( scene, camera );
+        renderer.render(scene, camera);
     }
 
     window.addEventListener('resize', () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
     });
-  </script>
+
+    function collapseMenu() {
+      const menu = document.getElementById('car-menu');
+      menu?.classList.toggle('hidden');
+
+      const icon = document.getElementById('collapse-icon');
+      icon?.classList.toggle('ph-arrow-down');
+      icon?.classList.toggle('ph-arrow-up');
+    }
+
+    document.getElementById('collapse-btn')?.addEventListener('click', collapseMenu);
+</script>
 </Layout>
